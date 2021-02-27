@@ -12,9 +12,9 @@ function switchToDarkTheme() {
   elem.style.setProperty('--button', 'var(--dark-button)');
 }
 
-if (
-  localStorage.getItem('SETTINGS') &&
-  JSON.parse(localStorage.getItem('SETTINGS')).theme == 'dark'
-) {
-  switchToDarkTheme();
+if (localStorage.getItem('SETTINGS')) {
+  let st = JSON.parse(localStorage.getItem('SETTINGS')) || {};
+  if (st.theme == 'dark') {
+    switchToDarkTheme();
+  }
 }
