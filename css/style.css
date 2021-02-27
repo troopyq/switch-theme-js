@@ -1,0 +1,200 @@
+:root {
+  --text: var(--light-text);
+  --header: var(--light-header);
+  --footer: var(--light-footer);
+  --main: var(--light-main);
+  --button: var(--light-button);
+  --light-text: var(--color-black);
+  --light-header: var(--color-blue);
+  --light-footer: var(--color-lightgray);
+  --light-main: var(--color-white);
+  --light-button: var(--color-lightblue);
+  --dark-text: var(--color-darkwhite);
+  --dark-header: var(--color-darkgray);
+  --dark-footer: var(--color-darkgray);
+  --dark-main: var(--color-dark);
+  --dark-button: var(--color-gray);
+  --color-black: #111;
+  --color-dark: #333;
+  --color-gray: #888;
+  --color-darkgray: #555;
+  --color-lightgray: #aaa;
+  --color-white: #f4f4f4;
+  --color-darkwhite: #e5e5e5;
+  --color-blue: #2a69c9;
+  --color-lightblue: #578bd8;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-transition: background-color 0.6s ease-out, color 0.1s ease-out;
+  transition: background-color 0.6s ease-out, color 0.1s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font: 1.6rem Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: var(--main);
+  color: var(--text);
+}
+
+i[class^="icon-"]:before,
+i[class*=" icon-"]:before {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul.ul-nav {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0.5rem 1rem;
+}
+
+ul.ul-nav li {
+  margin: 0.5rem 1.5rem;
+}
+
+ul.ul-nav li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container {
+  height: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+header {
+  background-color: var(--header);
+  padding: 1rem 0;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  padding: 2rem 0;
+  background-color: var(--main, red);
+}
+
+footer {
+  background-color: var(--footer);
+  padding: 1rem 0;
+}
+
+button {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  color: inherit;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background-color: var(--button);
+  -webkit-transition: all 0.1s, width 2s;
+  transition: all 0.1s, width 2s;
+  cursor: pointer;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 2.6rem;
+}
+
+#theme {
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  padding: 0.2rem;
+  border-radius: 100px;
+  text-transform: capitalize;
+}
+
+#theme i:before {
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+}
+
+#theme:hover i:before {
+  -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+}
+
+#theme:active i:before {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+@media (max-width: 600px) {
+  .header-row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-device-width: 600px) {
+  #theme:hover i:before {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  #theme:active i:before {
+    -webkit-transform: rotate(240deg);
+            transform: rotate(240deg);
+  }
+}
